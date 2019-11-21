@@ -1,6 +1,8 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+/* font-family: 'Source Sans Pro', sans-serif; */
+
 
 /*------------------------------------*\
 #Variables
@@ -15,12 +17,26 @@
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
 
+    --color-light-red: #ff6565;
+    --color-blue: #3b86ff;
+    --color-purple:#a3a0fb;
+    --color-dark-blue:#43425d;
+    --color-white: #fff;
+    --color-background-light:#F0F0F7;
+    --color-background-dark:var(--color-dark-blue);
+
+
     /* Shadows */
 
     /* border radius */
 
     /* transitions */
     --transition-alpha: .1s;
+    /* fonts */
+    --font-general:font-family: 'Source Sans Pro', sans-serif;
+
+    /* whitespace */
+
 }
 
 /*------------------------------------*\
@@ -34,14 +50,18 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: var(--color-neutral-dark);
+    font-family: var(--font-general);
+    color: var(--color-dark-blue);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-background-light);
+    height: 100%;
+}
+body{
+    height: 100%;
 }
 
 *,
@@ -288,6 +308,62 @@ input::placeholder {
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+
+/*
+    Component: c-app
+    ---
+    Website main app
+*/
+.c-app{
+    display: grid;
+    min-height: 100%;
+    /* define width of columns */
+    grid-template-columns:  260px ;
+    
+    grid-template-rows: 70px ;
+    
+}
+/*
+    Component: c-app__logo
+    ---
+    Website logo design
+*/
+.c-app__logo{
+grid-row: 1;
+background-color: var(--color-background-dark);
+color: var(--color-white);
+border: white 1px solid;
+display: flex;
+align-items: center;
+}
+.c-app__logo h1{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+}
+
+/*
+    Component: c-app__topbar
+    ---
+    Website topbar design
+*/
+.c-app__topbar{
+grid-column: 2;
+background-color: var(--color-white);
+}
+
+
+/*
+    Component: c-app__sidebar
+    ---
+    Website sidebar design
+*/
+.c-app__sidebar{
+    background-color: var(--color-background-dark);
+    grid-column: 1;
+    grid-row: 2;
+}
+
 
 /*
     Component: Logo
